@@ -1,0 +1,30 @@
+= render "header"
+.galleries
+  %h2.recipe みんなのレシピ
+  .wrapper
+  - @posts.each do |post|
+    %ul.index-gallery
+      %li.index-gallery__photo
+        = link_to post_path(post.id) do
+          = image_tag post.image.to_s
+      -if user_signed_in?    
+        %li.index-gallery__user--name
+          = link_to mypage_path(post.user) do
+            = post.user.name
+          = link_to "#", class: "star-btn" do
+            = icon('fas', 'star')  
+      -else 
+        %li.index-gallery__user--name
+          = link_to root_path do
+            = post.user.name
+          = link_to "#", class: "star-btn" do
+            = icon('fas', 'star')  
+
+  = paginate(@posts)  
+= render "footer"
+
+
+
+
+
+

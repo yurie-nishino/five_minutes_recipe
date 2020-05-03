@@ -1,0 +1,34 @@
+body{
+  margin: 0;
+}
+
+
+// user-index
+// .clearfix::after {
+//   content: "";
+//   display: block;
+//   clear: both;
+// }
+
+.user-galleries{
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: scroll;
+  background-color: #fff2e4;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  .user-name{
+    text-align: center;
+  }
+  .user-gallery{
+    width: 980px;
+    margin: 0 auto;
+    &__right{
+      float: left;
+      width: 350px;
+      height: 350px;
+      margin-left: 93px;
+      margin-top: 50px;
+    }
+  }
+}

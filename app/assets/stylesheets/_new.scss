@@ -1,0 +1,39 @@
+
+.new-contents{
+  width: 100%;
+  height: 100vh;
+
+  .form-contents{
+    width:30%;
+    margin: 0 auto;
+    position: relative;
+    h3{
+      text-align: center;
+    }
+    .form-title{
+      position: absolute;
+      top: 70px;
+    }
+    .form-recipe{
+      position: absolute;
+      top: 120px;
+    }
+    .form-image{
+      position: absolute;
+      top: 335px;
+      left: 415px;
+      input{
+      display: none;
+      }
+    }
+    .form-send{
+      position: absolute;
+      top: 420px;
+      left: 170px;
+    } 
+  }
+}
+
+form::placeholder {
+  color: red;
+}

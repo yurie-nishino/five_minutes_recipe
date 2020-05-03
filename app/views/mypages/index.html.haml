@@ -1,0 +1,43 @@
+.header
+  .header__logo
+    = link_to root_path do
+      %h1 My Page
+          
+      .header__logo__search-box
+        = link_to edit_user_path(current_user) do
+          edit
+          = icon('fas', 'cog', class: 'icon')
+      .header__logo__login-box
+        = link_to destroy_user_session_path, method: :delete, class: "login__btn" do
+          logout
+          = icon('fas', 'sign-out-alt')
+
+.user-galleries
+  %h3.user-name
+    = current_user.name
+  .wrapper
+  - @posts.each do |post|
+    .user-gallery.clearfix
+      .user-gallery__right
+        = link_to post_path(post.id) do
+          = image_tag post.image.to_s
+        = post.name
+      -# .user-gallery__left
+      -#   = link_to post_path(post.id) do
+      -#     = image_tag post.image.to_s
+      -#   %p レシピ名
+      -#   = post.name
+  = paginate(@posts)     
+
+.footer
+  .item-button
+    = link_to "#", class: "memo-btn" do
+      = icon('far', 'file-alt')
+    = link_to root_path, class: "index-btn" do
+      = icon('fas', 'utensils')
+    = link_to new_post_path class: "camera-btn" do
+      = icon('fas', 'camera')
+    = link_to "#", class: "star-btn" do
+      = icon('fas', 'star')
+    = link_to mypages_path, class: "mypage-btn" do
+      = icon('fas', 'user')

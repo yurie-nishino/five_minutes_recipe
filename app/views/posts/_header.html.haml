@@ -1,0 +1,22 @@
+.header
+  .header__logo
+    = link_to root_path do
+      %h1 5MR
+      %p.title 簡単5分クッキング
+      
+
+    -if user_signed_in?
+      .header__logo__login-box
+        = form_with url: posts_path, method: :get, local: true do |form|
+          = form.text_field :search
+          = form.submit 'Search', name: nil
+
+    -else
+      .header__logo__signup-box
+        = link_to new_user_registration_path class: "signup__btn" do
+          sign up
+          = icon('fas', 'user-plus')
+      .header__logo__user-box
+        = link_to new_user_session_path class: "login__btn" do
+          log in
+          = icon('fas', 'sign-in-alt')   

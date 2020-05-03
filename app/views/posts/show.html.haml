@@ -1,0 +1,25 @@
+.header
+  .header__logo
+    = link_to root_path do
+      %h1 5MR
+      %p.title レシピ
+      .header__logo__search-box
+        = link_to "#", class: "search__btn" do
+          search
+          = icon('fas', 'search')
+.show-content
+  .post-title
+    = @post.name
+  .post-date
+    = @post.created_at
+  .post-image
+    = image_tag @post.image.url
+  .post-recipe
+    = simple_format(@post.text)
+    
+  - if user_signed_in? && current_user.id == @post.user_id
+    = link_to  edit_post_path(@post.id), class: "edit-button" do
+      edit
+    = link_to  post_path(@post.id), method: :delete, class: "delete-button" do
+      delete
+= render "footer"

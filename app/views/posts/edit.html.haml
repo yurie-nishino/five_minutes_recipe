@@ -1,0 +1,13 @@
+= render "header"
+.new-contents
+  = form_with model: @post, local: true do |form|
+    .form-contents
+      %h3 編集する
+      = form.text_field :name,  placeholder: "Title", size: "50", class: "form-title"
+      = form.text_area :text,  placeholder: "Recipe", cols: "50", rows:"10", class: "form-recipe"
+      = form.label :image, class: "form-image" do
+        = icon('fa', 'image')
+        = form.file_field :image, class: "form-control"
+      = form.submit "SEND", class: "form-send"
+= render "footer"
+

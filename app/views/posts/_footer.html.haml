@@ -1,0 +1,15 @@
+.footer
+  .item-button
+    = link_to "#", class: "memo-btn" do
+      = icon('far', 'file-alt')
+    = link_to root_path, class: "index-btn" do
+      = icon('fas', 'utensils')
+    = link_to new_post_path class: "camera-btn" do
+      = icon('fas', 'camera')
+    = link_to "#", class: "star-btn" do
+      = icon('fas', 'star')
+
+    -if user_signed_in?
+      = link_to mypages_path, class: "mypage-btn" do
+        = icon('fas', 'user')
+  
