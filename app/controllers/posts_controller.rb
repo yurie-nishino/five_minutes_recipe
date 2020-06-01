@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
   
+  before
+  
   def index
     @posts = Post.includes(:user).order("created_at DESC").page(params[:page]).per(5)
     @posts = @posts.where('name LIKE ?', "%#{params[:search]}%") if params[:search].present?
