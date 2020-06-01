@@ -15,10 +15,8 @@
             = icon('fas', 'star')  
       -else 
         %li.index-gallery__user--name
-          = link_to root_path do
-            = post.user.name
-          = link_to "#", class: "star-btn" do
-            = icon('fas', 'star')  
+          = post.user.name
+          
 
   = paginate(@posts)  
 = render "footer"
