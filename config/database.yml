@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: five_minutes_recipe_production
-  username: five_minutes_recipe
-  password: <%= ENV['FIVE_MINUTES_RECIPE_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
