@@ -2,10 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'posts#index'
 
-  post "likes/:post_id/create" => "likes#create"
   
   resources :posts do
-    resources :likes
+    resources :likes, only: [:create, :destroy]
   end
   
     resources :users do
