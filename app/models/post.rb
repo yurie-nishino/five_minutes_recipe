@@ -5,7 +5,7 @@ class Post < ApplicationRecord
   mount_uploader :image, ImageUploader
 
   def like_user(user_id)
-    likes.find_by(user_id: user_id)#そのユーザーが持っているlikeモデルを探す
+    likes.find_by(user_id: user_id)#そのユーザーが持っているlikeを探す
   end
 
   def self.search(search)
