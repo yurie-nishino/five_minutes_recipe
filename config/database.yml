@@ -18,6 +18,5 @@ production:
   <<: *default
   database: five_minutes_recipe_production
   username: root
-  host: localhost
-  password: riri1053
+  password: <%= ENV['riri1053'] %>
   socket: /var/lib/mysql/mysql.sock

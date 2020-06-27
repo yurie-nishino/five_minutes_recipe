@@ -1,0 +1,31 @@
+:javascript
+  console.log('test');
+  
+-# current_userがいいね！した場合（method: :delete）としてない場合（method: :post）で条件分岐。
+-unless @posts.like_user(current_user.id).blank? 
+  = link_to post_like_path(post_id: post.id, id: post.likes[0].id), method: :delete, remote: true do
+    .vertical_like
+      = link_to "#", class: "star-btn" do
+        = icon('fas', 'star')
+      %span.star-btn
+        = post.likes_count
+-else
+  = links_to post_likes_path(post.id), method: :post, remote: true do
+    .vertical_like
+      
+      %span.white-star-btn
+        = post.likes_count
+- if post.likes_count > 0
+  .vertical_like
+    = link_to "#", class: "star-btn" do
+      = icon('fas', 'star')
+    %span.star-btn
+      = post.likes_count
+- else
+  .vertical_like
+    = link_to "#", class: "star-btn" do
+      = icon('fas', 'star')
+    %span.white-star-btn
+      = post.likes_count
+-# = link_to "#", class: "star-btn" do
+-#   = icon('fas', 'star')  
