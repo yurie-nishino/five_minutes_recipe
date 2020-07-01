@@ -1,12 +1,6 @@
-= render "header"
-
-:javascript
-  console.log('like');
-  
+= render "header"  
 .galleries
   %h2.recipe みんなのレシピ
-  :javascript
-    console.log('test');
   .wrapper
   - @posts.each do |post|
     %ul.index-gallery
@@ -17,6 +11,7 @@
         %li.index-gallery__user--name
           = link_to mypage_path(post.user) do
             = post.user.name
+        %div{:id => "likes_buttons_#{post.id}"}
           = render partial: 'likes/like', locals: { post: post, likes: @likes}
       -else 
         %li.index-gallery__user--name
