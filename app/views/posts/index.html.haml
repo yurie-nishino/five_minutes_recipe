@@ -11,8 +11,8 @@
         %li.index-gallery__user--name
           = link_to mypage_path(post.user) do
             = post.user.name
-        %div{:id => "likes_buttons_#{post.id}"}
-          = render partial: 'likes/like', locals: { post: post, likes: @likes}
+        %div{id: "likes_buttons_ #{post.id}"}
+        = render partial: 'likes/like', locals: { post: post, likes: @likes}
       -else 
         %li.index-gallery__user--name
           = post.user.name
