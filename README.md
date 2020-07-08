@@ -1,24 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# 製作意図
+毎日忙しい社会人・学生・主婦のための料理レシピ投稿アプリを製作しました。
+「５分で出来るレシピ」に特化し、機能も必要最小限でスッキリ見やすく、投稿しやすいことにこだわりました。
+まだ未実装ですが、レシピをまとめて販売できる機能もつけたいと思っています。
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
