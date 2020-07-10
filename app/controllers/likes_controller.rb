@@ -2,11 +2,9 @@ class LikesController < ApplicationController
   before_action :set_post
 
   def create
-    binding.pry
-    @like = Like.create(user_id: @current_user.id, post_id: params[:post_id])#投稿ユーザーと内容
-    binding.pry
-    @likes = Like.where(post_id: params[:post_id])#いいねの合計数
-    @post.reload
+    @like = Like.new(user_id: @current_user.id, post_id: params[:post_id])#投稿ユーザーと内容
+    @likes = Like.where(post_id: params[:post_id])#いいねの合計数 #使われてないので必要ない？
+    @like.save
   end
 
   def destroy
